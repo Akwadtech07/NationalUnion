@@ -1,0 +1,115 @@
+@{
+    Layout = "~/Views/Shared/_Landing.cshtml";
+    ViewData["Title"] = "User Login";
+}
+
+
+
+<style>
+    body {
+        background-image: url('/yellowBus/NURTW--640x360.jpg');
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    h5 {
+        text-align: center;
+        text-align: fixed;
+        color: green;
+    }
+
+    .sidebar {
+        background-color: white;
+        color: green;
+        width: 220px;
+        height: 100%;
+        float: left;
+        position: fixed;
+        padding: 1%;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+
+    .sidebar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .sidebar li {
+        display: block;
+        padding: 10px;
+
+        border-bottom: 1px solid green;
+    }
+
+    .sidebar a {
+        color: black;
+        font-weight: bolder;
+        text-decoration: transparent;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        font-weight: bolder;
+        background-color: green;
+        min-width: 200px;
+        z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+</style>
+
+
+
+
+<section>
+
+
+    <body>
+        <div class="sidebar" style="margin-left: -4%; margin-top: -1%">
+            <h4>Tresurer DashBoard</h4>
+            <ul>
+                <li class="dropdown">
+                    <a href="#">Ticket Mgt</a>
+                    <ul class="dropdown-content">
+                        <li><a asp-controller="Ticket" asp-action="Create">Generate Ticket</a></li>
+                         <li><a asp-controller="Ticket" asp-action="GetAll">View All Tickets</a></li>
+                    </ul>
+                </li>
+                <!-- other links -->
+            </ul>
+
+            <ul>
+                <li class="dropdown">
+                    <a href="#">Bus Mgt</a>
+                    <ul class="dropdown-content">
+                        <li><a asp-controller="Bus" asp-action="GetAll">View Buses</a></li>
+                    </ul>
+                </li>
+                <!-- other links -->
+            </ul>
+        </div>
+
+
+        @if (TempData["Success"] != null)
+        {
+            <script>
+                window.onload = function () {
+
+                    alert("@TempData["Success"]")
+                }
+            </script>
+        }
+    
+    </body>
+
+    </html>
+</section>

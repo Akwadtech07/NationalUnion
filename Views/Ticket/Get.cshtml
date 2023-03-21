@@ -1,0 +1,123 @@
+@model NationalUnion.Models.DTOs.TicketDTO
+@{
+    Layout = "~/Views/Shared/_DriverLanding.cshtml";
+    ViewData["Title"] = "List A Driver";
+}
+<style>
+    body {
+        background-image: url('/yellowBus/danfo.jpg');
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    section {}
+
+    h5 {
+        text-align: center;
+        text-align: fixed;
+        color: green;
+    }
+
+    .sidebar {
+        background-color: white;
+        color: green;
+        width: 220px;
+        height: 100%;
+        float: left;
+        position: fixed;
+        font-family: sans-serif;
+        padding: 1%;
+        box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    }
+
+    .sidebar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .sidebar li {
+        display: block;
+        padding: 10px;
+
+        border-bottom: 1px solid green;
+    }
+
+    .sidebar a {
+        color: rgba(21, 20, 20, 0.664);
+        font-weight: bolder;
+        text-decoration: transparent;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        font-weight: bolder;
+        background-color: green;
+        min-width: 200px;
+        z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+        text-transform: uppercase;
+        font-family: sans-serif;
+    }
+
+    thead {
+        color: green;
+        font-weight: bolder;
+    }
+
+    tbody {
+        color: red;
+        font-weight: bolder;
+    }
+
+    table {
+        width: 45pc;
+    }
+</style>
+
+
+<section>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ReferenceNumber</th>
+                <th>Price</th>
+                <th>Availability</th>
+            </tr>
+        </thead>
+        <tbody class="tbl">
+
+            <tr class="rows">
+
+                <td>
+                    @Model.ReferenceNumber
+                </td>
+                <td>
+                    @Model.Price
+                </td>
+                <td>
+                    @Model.IsAvailable
+                </td>
+                <td>
+                    <a asp-controller="Ticket" asp-action="BuyTicket">Buy Ticket</a>
+
+                </td>
+                <td>
+                    <a asp-controller="Driver" asp-action="FundWallet">Fund Wallet</a>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</section>

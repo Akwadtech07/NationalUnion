@@ -1,0 +1,135 @@
+@model IEnumerable<NationalUnion.Models.DTOs.UserDTO>
+@{
+    Layout = "~/Views/Shared/_Landing.cshtml";
+    ViewData["Title"] = "List Users";
+}
+
+
+<style>
+    body {
+        background-image: url('/yellowBus/banfo animation2.webp');
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    section {}
+
+    h5 {
+        text-align: center;
+        text-align: fixed;
+        color: green;
+    }
+
+    .sidebar {
+        background-color: white;
+        color: green;
+        width: 220px;
+        height: 100%;
+        float: left;
+        position: fixed;
+        font-family: sans-serif;
+        padding: 1%;
+        box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    }
+
+    .sidebar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .sidebar li {
+        display: block;
+        padding: 10px;
+
+        border-bottom: 1px solid green;
+    }
+
+    .sidebar a {
+        color: rgba(21, 20, 20, 0.664);
+        font-weight: bolder;
+        text-decoration: transparent;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        font-weight: bolder;
+        background-color: green;
+        min-width: 200px;
+        z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+        text-transform: uppercase;
+        font-family: sans-serif;
+    }
+
+    thead {
+        color: whitesmoke;
+        font-weight: bolder;
+    }
+
+    tbody {
+        color: red;
+        font-weight: bold;
+
+       
+
+    }
+
+    table {
+        width: 45pc;
+    }
+
+    .fund {
+        background-color: green;
+        text-decoration: ;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    }
+</style>
+<body>
+
+    <table>
+        <thead>
+            <tr>
+
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th> Email</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody class="tbl">
+            @foreach (var user in Model)
+            {
+                <tr class="rows">
+                    <td>
+                        @user.FirstName
+                    </td>
+                    <td>
+                        @user.LastName
+                    </td>
+                    <td>
+                        @user.Email
+                    </td>
+                    <td>
+                       @user.Address
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+
+
+    </table>
+
+</body>
+
+

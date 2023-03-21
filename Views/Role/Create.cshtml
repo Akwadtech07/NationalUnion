@@ -1,0 +1,76 @@
+@model NationalUnion.Models.DTOs.CreateRoleRequestModel
+@{
+    ViewData["Tittle"] = "Admin Register";
+    Layout = null;
+}
+<style>
+    section {
+    @*background-color:green;*@@*background-image:url('/yellowBus/danfG.png');*@@*border:2pxsolidred;*@@*box-shadow:1px2px3px4pxrgba(20,20,20,0.4);*@
+    }
+
+    div {
+        padding: auto;
+        margin: 4%;
+    @*gap:6px;*@@*gap:3px;*@scroll-behavior: unset;
+        text-align: center;
+
+
+
+    }
+
+    .head-font {
+        text-align: center;
+        color: blue;
+        text-decoration-style: bold;
+        font-size: larger;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 3%;
+
+    }
+
+    .form {
+        width: 300px;
+        height: 30px;
+        border: solid lightblue;
+        border-radius: 0%;
+        box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
+        padding-right: %;
+
+    }
+
+    body {
+        background-image: url('/yellowBus/ticketerBus.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    .subm {
+        width: 115px;
+        height: 29px;
+        color: blue;
+        border-color: lightblue;
+        border-radius: 44%;
+        box-shadow: 1px 2px 3px 4px rgba(62, 58, 58, 0.599);
+    }
+</style>
+
+
+<section>
+    <h5 class="head-font">Role Creation</h5>
+
+
+
+    <form asp-action="Create" method="post" enctype="multipart/form-data">
+        <div>
+            <input class="form" required type="text" name="Name" placeholder="Role Name">
+        </div>
+         <div>
+            <input class="form" required type="text" name="Description" placeholder="Role Description">
+        </div>
+
+        <div>
+            <input class="subm" type="submit" value="Create"></input>
+        </div>
+    </form>
+</section>

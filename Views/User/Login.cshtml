@@ -1,0 +1,105 @@
+@model NationalUnion.Models.DTOs.CreateAdminRequestModel
+@{
+    @* var value = TempData["Success"]; *@
+    Layout = null;
+}
+
+<style>
+    div {
+        padding: auto;
+        margin: 4%;
+        scroll-behavior: unset;
+        text-align: center;
+
+
+
+    }
+
+    .head-font {
+        text-align: center;
+        color: rgb(128, 23, 0);
+        text-decoration-style: bold;
+        font-size: bolder;
+        font-family: 'Poppins', sans-serif;
+        ;
+        padding: 3%;
+
+    }
+
+    .form {
+        width: 300px;
+        height: 30px;
+        border: solid rgb(173, 230, 201);
+        box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.492);
+        backface-visibility: visible;
+        border-color: red;
+
+    }
+
+    body {
+        background-image: url('/yellowBus/secretariat.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    .subm {
+        width: 115px;
+        height: 29px;
+        color: black(0, 255, 68);
+        border-color: red;
+        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    }
+
+    .fail {
+        text-align: left;
+        color: red;
+    }
+</style>
+
+<body>
+
+    <h3 class="head-font"> LOGIN </h3>
+    <form asp-action="LOGIN" method="post">
+
+
+        <div>
+            <input class="form" required type="email" name="Email" placeholder="Email adress">
+        </div>
+        <div>
+            <input class="form" type="password" name="Password" placeholder="Password">
+
+            <div>
+                <input class="subm" type="submit" value="Login"></input>
+
+            </div>
+    </form>
+    @if (TempData["Fail"] != null)
+    {
+        <script>
+            window.onload = function () {
+
+                alert("@TempData["fail"]")
+            }
+        </script>
+
+    }
+    @if (TempData["Success"] != null)
+    {
+        <script>
+            window.onload = function () {
+
+                alert("@TempData["Success"]")
+            }
+        </script>
+    }
+       @if (TempData["send"] != null)
+    {
+        <script>
+            window.onload = function () {
+
+                alert("@TempData["send"]")
+            }
+        </script>
+    }
+</body>

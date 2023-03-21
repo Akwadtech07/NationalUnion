@@ -1,0 +1,128 @@
+@* @model NationalUnion.Models.DTOs.UserDTO
+@{
+    Layout = "~/Views/Shared/_Landing.cshtml";
+    ViewData["Title"] = "List Admins";
+}
+<style>
+    body {
+        background-image: url('/yellowBus/danfo.jpg');
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    section {}
+
+    h5 {
+        text-align: center;
+        text-align: fixed;
+        color: green;
+    }
+
+    .sidebar {
+        background-color: white;
+        color: green;
+        width: 220px;
+        height: 100%;
+        float: left;
+        position: fixed;
+        font-family: sans-serif;
+        padding: 1%;
+        box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    }
+
+    .sidebar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .sidebar li {
+        display: block;
+        padding: 10px;
+
+        border-bottom: 1px solid green;
+    }
+
+    .sidebar a {
+        color: rgba(21, 20, 20, 0.664);
+        font-weight: bolder;
+        text-decoration: transparent;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        font-weight: bolder;
+        background-color: green;
+        min-width: 200px;
+        z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+        text-transform: uppercase;
+        font-family: sans-serif;
+    }
+
+    thead {
+        color: green;
+        font-weight: bolder;
+    }
+
+    tbody {
+        color: red;
+        font-weight: bolder;
+    }
+
+    table {
+        width: 35pc;
+    }
+</style>
+
+
+<section>
+
+    <table>
+        <thead>
+            <tr>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>RegNo</th>
+            </tr>
+        </thead>
+        <tbody class="tbl">
+
+            <tr class="rows">
+
+                <td>
+                    @
+                </td>
+                  <td>
+                     @Model.LastName   
+                </td>
+                    <td>
+                    @Model.Email
+                </td>
+                <td>
+                    @Model.RegNo
+                </td>
+                <td>
+                    <a asp-controller="Admin" asp-action="Update" asp-route-id="@Model.Id">Update</a>
+
+                </td>
+
+
+            </tr>
+
+
+
+
+        </tbody>
+    </table>
+
+</section> *@

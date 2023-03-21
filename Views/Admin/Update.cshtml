@@ -1,0 +1,101 @@
+@model NationalUnion.Models.DTOs.UpdateAdminRequestModel
+@{
+    ViewData["Tittle"] = "Admin Update";
+    Layout = null;
+}
+<style>
+    .footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        white-space: nowrap;
+        line-height: 60px;
+        color: #0077cc;
+        position: relative;
+        align-items: left;
+    }
+
+    div {
+        padding: auto;
+        margin: 4%;
+    @*gap:6px;*@@*gap:3px;*@scroll-behavior: unset;
+        text-align: center;
+
+
+
+    }
+
+    .head-font {
+        text-align: center;
+        color: green;
+        text-transform: capitalize;
+        text-decoration-style: bold;
+        font-size: larger;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 3%;
+
+    }
+
+    .form {
+        width: 300px;
+        height: 30px;
+        border: solid lightgreen;
+        border-radius: 0%;
+        box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
+        padding-right: %;
+
+    }
+
+    body {
+        background-image: url('/yellowBus/WhatsApp-Image-2022-04-08-at-6.32.09-PM-750x430.jpeg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    .subm {
+        width: 115px;
+        height: 29px;
+        color: green;
+        border-color: lightgreen;
+        border-radius: 44%;
+        box-shadow: 1px 2px 3px 4px rgba(62, 58, 58, 0.599);
+    }
+</style>
+
+
+<section>
+    <h5 class="head-font"> ADMIN UPDATE</h5>
+
+
+
+    <form asp-action="Update" method="post" enctype="multipart/form-data">
+
+        <div>
+            <input class="form" required type="text" name="FirstName" placeholder="FirstName">
+        </div>
+        <div>
+            <input class="form" type="text" name="LastName" placeholder="LastName">
+        </div>
+        <div>
+            <input class="form" type="email" name="Email" placeholder="Email adress">
+        </div>
+
+        <div>
+            <input class="form" type="text" name="Address" placeholder="Address">
+        </div>
+        <div>
+            <input class="form" type="text" name="PhoneNumber" placeholder="Phone Number">
+        </div>
+
+
+        <div>
+            <input class="subm" type="submit" value="Update">
+            @ViewBag.Message
+        </div>
+    </form>
+    <footer class="border-down footer text-muted">
+        <div class="container">
+            &copy; 2022 - NationalUnion - <a asp-area="" asp-controller="Home" asp-action="index">Home</a>
+        </div>
+</section>
